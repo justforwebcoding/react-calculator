@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 class Calculator extends Component {
   state = {
     dynamicOutput: "",
-    permanentOutput: ""
+    permanentOutput: "0"
   };
 
   buildString = char => {
@@ -15,6 +15,13 @@ class Calculator extends Component {
   };
 
   deleteAll = () => {
+    this.setState({
+        dynamicOutput: "",
+        permanentOutput: "0"
+    })
+  };
+
+  deleteLast = () => {
 
   };
 
@@ -47,7 +54,8 @@ class Calculator extends Component {
           <Button onAction={this.buildString}  value={"/"} />
           <Button onAction={this.buildString}  value={"*"} />
           <Button onAction={this.countAll} value={"="} />
-          <Button onAction={this.deleteAll} value={"ce"} />
+          <Button onAction={this.deleteLast} value={"ce"} />
+          <Button onAction={this.deleteAll} value={"c"}/>
         </div>
       </div>
     );
