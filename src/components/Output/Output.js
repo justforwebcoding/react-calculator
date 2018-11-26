@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Output extends Component {
-    render() {
-        const { permanent, dynamic } = this.props;
-        return(
-            <div className="output">
-                <input className="dynamic" type="text" defaultValue={dynamic}/>
-                <input className="permanent" type="text" defaultValue={permanent}/>
-            </div>
-        )
-    }
+  render() {
+    const { permanent, dynamic } = this.props;
+    return (
+      <div className="output">
+        <input
+          onChange={() => {}}
+          className="dynamic"
+          type="text"
+          value={dynamic}
+        />
+        <input
+          onChange={() => {}}
+          className="permanent"
+          type="text"
+          value={permanent}
+        />
+      </div>
+    );
+  }
 }
 
-export default Output
+export default Output;
