@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class Output extends Component {
   render() {
@@ -21,5 +22,10 @@ class Output extends Component {
     );
   }
 }
+
+Output.propTypes = {
+    dynamic: PropTypes.string.isRequired,
+    permanent: PropTypes.string.isRequired
+};
 
 export default Output;

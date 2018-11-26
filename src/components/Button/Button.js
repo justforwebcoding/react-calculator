@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class Button extends Component {
 
   handleClick = (e) => {
-    const { handleClick, value } = this.props;
+    const { onAction, value } = this.props;
     e.preventDefault();
-    handleClick(value)
+    onAction(value);
   };
 
   render() {
@@ -13,5 +14,10 @@ class Button extends Component {
     return <button onClick={this.handleClick}>{value}</button>;
   }
 }
+
+Button.propTypes = {
+    onAction: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired
+};
 
 export default Button;
