@@ -14,9 +14,17 @@ class Calculator extends Component {
     }));
   };
 
-  deleteAll = () => {};
+  deleteAll = () => {
 
-  countAll = () => {};
+  };
+
+  countAll = () => {
+      let state = this.state;
+      state.permanentOutput = '' + eval(state.dynamicOutput);
+      state.dynamicOutput = state.permanentOutput;
+
+      this.setState(state);
+  };
 
   render() {
     const { permanentOutput, dynamicOutput } = this.state;
@@ -38,8 +46,8 @@ class Calculator extends Component {
           <Button onAction={this.buildString}  value={"-"} />
           <Button onAction={this.buildString}  value={"/"} />
           <Button onAction={this.buildString}  value={"*"} />
-          <Button onClick={this.countAll} value={"="} />
-          <Button onClick={this.deleteAll} value={"ce"} />
+          <Button onAction={this.countAll} value={"="} />
+          <Button onAction={this.deleteAll} value={"ce"} />
         </div>
       </div>
     );
