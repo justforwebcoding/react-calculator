@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import './Output.css'
 
 class Output extends Component {
   render() {
-    const { permanent, dynamic } = this.props;
+    const { permanent, dynamic, className } = this.props;
     return (
-      <div className="output">
+      <div className={className}>
         <input style={display}
           onChange={() => {}}
           className="dynamic"

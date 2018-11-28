@@ -1,0 +1,27 @@
+.output {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.output input {
+    width: 100%;
+    text-align: right;
+
+    border: 1px solid #000;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.dynamic {
+    border-bottom: 0px;
+}
+
+.permanent {
+    border-top: 0px;
+}
+

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Output from "../Output/Output";
 import Button from "../Button/Button";
+import './Calculator.css';
 
 class Calculator extends Component {
   state = {
@@ -43,7 +44,8 @@ class Calculator extends Component {
   deleteAll = () => {
     this.setState({
         process: "",
-        result: "0"
+        result: "0",
+        init: true,
     })
   };
 
@@ -64,9 +66,10 @@ class Calculator extends Component {
 
   render() {
     const { result, process } = this.state;
+    const { className } = this.props;
     return (
-      <div className="calculator">
-        <Output dynamic={process} permanent={result} />
+      <div className={className}>
+        <Output className="output" dynamic={process} permanent={result} />
         <div className="buttons">
           <Button onAction={this.passNumbers} value={"1"} />
           <Button onAction={this.passNumbers} value={"2"} />
