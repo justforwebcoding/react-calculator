@@ -54,7 +54,7 @@ class Calculator extends Component {
   countAll = char => {
       let state = {...this.state};
 
-      state.process += + state.result;
+      state.process += state.result;
       state.result = eval(state.process);
       state.process = '';
       state.init = true;
