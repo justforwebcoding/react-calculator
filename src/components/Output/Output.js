@@ -6,13 +6,13 @@ class Output extends Component {
     const { permanent, dynamic } = this.props;
     return (
       <div className="output">
-        <input
+        <input style={display}
           onChange={() => {}}
           className="dynamic"
           type="text"
           value={dynamic}
         />
-        <input
+        <input style={display}
           onChange={() => {}}
           className="permanent"
           type="text"
@@ -22,6 +22,10 @@ class Output extends Component {
     );
   }
 }
+
+const display = {
+    "display": "block"
+};
 
 Output.propTypes = {
     dynamic: PropTypes.string.isRequired,

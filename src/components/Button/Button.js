@@ -5,7 +5,6 @@ class Button extends Component {
 
   handleClick = (e) => {
     const { onAction, value } = this.props;
-    e.preventDefault();
     onAction(value);
   };
 
